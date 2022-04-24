@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>{{pokemon?.name}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/pokemon"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-text-center">
+    <ion-card class="imageBlock">
+      <ion-card-header>
+        <div *ngIf="image">
+          <ion-img [src]="image"></ion-img>
+        </div>
+      </ion-card-header>
+    </ion-card>
+    <ion-card class="mainBlock">
+      <ion-text color="primary">
+        <h6>Experience: {{pokemon?.base_experience}}</h6>
+      </ion-text>
+      <ion-text color="secondary">
+        <h6>Type: {{pokemon?.types[0].type.name}}</h6>
+      </ion-text>
+      <ion-icon
+        class="{{type?type:''}}"
+        size="large"
+        name="copy-outline"
+      ></ion-icon>
+      <p>Form: {{pokemon?.forms[0].name}}</p>
+      <p>Height: {{pokemon?.height}}</p>
+      <p>Weight: {{pokemon?.weight}}</p>
+    </ion-card>
+  </div>
+</ion-content>
